@@ -6,13 +6,18 @@
 * Joe
 
 ## Project description/outline
-TEXT
+Use historical VIX data and SPY data to:
+
+    1. Better inform investment timing
+    2. Create better predictions of portfolio performance
+    using a modified monte carlo simulation
 
 ## Research questions to answer 
-TEXT
+Can the CBOE Volatility Index be used to time the market?
 
 ## Datasets to be used 
-TEXT
+CBOE volatility index historical data (CBOE.com)
+
 
 ## Rough breakdown of tasks
 Correlation Analysis between VIX and market
