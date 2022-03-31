@@ -3,8 +3,7 @@
 * Weekdays
     * I am free after 4
     * Fridays I am generally busy
-
-I can answer slack while at work
+* I can answer slack while at work
 
 
 **Laramie**
