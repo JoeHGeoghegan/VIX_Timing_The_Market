@@ -1,0 +1,3 @@
+# If you have data wrangling representations you want me to code, list down your idea here
+Automatically adds PCT_Change columns for all data - DONE
+* Turns data into format such that MCForcastTools can run on it
