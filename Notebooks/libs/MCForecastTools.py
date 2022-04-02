@@ -108,7 +108,7 @@ class MCSimulation:
                     simvals[s].append(simvals[s][-1] * (1 + np.random.normal(mean_returns[s], std_returns[s])))
     
             # Calculate the daily returns of simulated prices
-            sim_df = pd.DataFrame(simvals).T.pct_change().std()
+            sim_df = pd.DataFrame(simvals).T.pct_change()
     
             # Use the `dot` function with the weights to multiply weights with each column's simulated daily returns
             sim_df = sim_df.dot(self.weights)
