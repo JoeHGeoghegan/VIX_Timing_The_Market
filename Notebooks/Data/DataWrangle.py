@@ -44,3 +44,9 @@ def add_pct_change(dataframe:pd.DataFrame):
     return pd.concat([dataframe,
     dataframe.pct_change().rename(columns=col_headers)
     ],axis='columns')
+
+def combine_DFs(list_of_DF,key_names):
+    df_base = {}
+    for index in range(len(key_names)):
+        df_base[key_names[index]] = list_of_DF[index]
+    return pd.concat(df_base.values(), keys=df_base.keys(), axis="columns")
