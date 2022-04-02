@@ -18,7 +18,7 @@ How best to use volatility indexes with monte carlo simulation? And how to use t
 
 High level we want to provide: 
     Proof that Volatility Index's have correlation to SPY
-    Proof that Volatility Index can be predicted
+    Proof that Volatility Index can be predicted (or not)
     Proof that investing at certain Volatility Index markers can increase gains
 
 ## Datasets to be used 
