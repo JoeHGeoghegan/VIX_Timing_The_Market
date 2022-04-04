@@ -75,3 +75,9 @@ def combine_DFs(list_of_DF,key_names):
     for index in range(len(key_names)):
         df_base[key_names[index]] = list_of_DF[index]
     return pd.concat(df_base.values(), keys=df_base.keys(), axis="columns")
+
+def tag_columns(df:pd.DataFrame,tag:str):
+    tagged_cols = {}
+    for col in df.columns:
+        tagged_cols[col] = f'{tag}_{col}'
+    return df.rename(columns=tagged_cols)
