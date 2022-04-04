@@ -28,6 +28,31 @@ def read_into_single_DF():
         DF_DataImport = pd.concat([DF_DataImport,df.set_index(indexCol)],axis='columns',join='outer')
     return DF_DataImport.sort_index()
 
+def read_into_MC_format(with_pct_change=False):
+    # Reading all csv data from PopStocks (containing 5 popular stocks) resource folder
+    DF_DataImport = {}
+    filepath_str = "./Data/cleandata/"
+    indexCol = "timestamp"
+
+    for filename in os.listdir(filepath_str): # Loops over ever file name in the folder
+        # print(filename)
+        df = pd.read_csv( # Uses Pandas csv reader
+            f"{filepath_str}/{filename}", # Recreates the  direct path to the csv file
+            
+            # Parse and set the date index
+            parse_dates=True,
+            infer_datetime_format=True
+            )
+        df = df[[indexCol,'close']].set_index(indexCol) # Remove all but useful data
+        if with_pct_change :
+            df_pc = df.pct_change().rename(columns={'close':'pct_change'})
+            df = pd.concat([df, df_pc], axis=1)
+        key = f'{filename[:len(filename)-9]}'
+
+        DF_DataImport[key] = df
+    DF_return = pd.concat(DF_DataImport.values(), keys=DF_DataImport.keys(), axis="columns")
+    return DF_return.sort_index()
+
 def shared_date_data():
     return read_into_single_DF().dropna()
 
