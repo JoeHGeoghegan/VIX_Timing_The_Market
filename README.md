@@ -41,3 +41,8 @@ Correlation Analysis between VIX and market
 PID tuning related to algorithimic trading
 Monte Carlo the VIX -- troubleshoot
 Modify the Monte Carlo Simulation to consider VIX
+
+## Usage
+Code used for analysis found in the Notebooks folder.
+
+Visualizations can be found in the Presentation folder
